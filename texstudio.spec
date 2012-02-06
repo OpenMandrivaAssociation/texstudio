@@ -3,7 +3,7 @@
 Name:		texstudio
 Summary:	Free cross-platform LaTeX editor
 License:	GPLv2+
-Version:	2.2
+Version:	2.3
 Release:	%mkrel 1
 Source0:	http://prdownloads.sourceforge.net/texstudio/%{origname}-%{version}.tar.gz
 URL:		http://texstudio.sourceforge.net/

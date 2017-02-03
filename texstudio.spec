@@ -1,13 +1,15 @@
+%define debug_package %{nil}
+
 Name:		texstudio
 Summary:	Free cross-platform LaTeX editor
 License:	GPLv2+
-Version:	2.5.1
-Release:	2
-Source0:	http://downloads.sourceforge.net/project/texstudio/%{name}/TeXstudio%20%{version}/%{name}-%{version}.orig.tar.gz
+Version:	2.12.2
+Release:	1
+Source0:	http://downloads.sourceforge.net/project/texstudio/%{name}/TeXstudio%20%{version}/%{name}-%{version}.tar.gz
 URL:		http://texstudio.sourceforge.net/
 Group:		Publishing
-BuildRequires:	qt4-devel
-BuildRequires:	pkgconfig(poppler-qt4)
+BuildRequires:	qt5-devel
+BuildRequires:	pkgconfig(poppler-qt5)
 Requires:	desktop-file-utils 
 
 %description
@@ -18,10 +20,10 @@ serves as a starting point from where you can easily run all necessary LaTeX
 tools.
 
 %prep
-%setup -q
+%setup -qn texstudio%{version}
 
 %build
-%qmake_qt4 PREFIX=%{_prefix} texstudio.pro 
+%qmake_qt5 PREFIX=%{_prefix} texstudio.pro 
 %make 
 
 %install
@@ -30,6 +32,10 @@ make install INSTALL_ROOT=%buildroot
 %files
 %{_datadir}/%{name}/*
 %{_datadir}/applications/texstudio.desktop
+%{_datadir}/appdata/texstudio.appdata.xml
+%{_datadir}/icons/hicolor/scalable/apps/texstudio.svg
+
+
 %{_bindir}/texstudio
 
 

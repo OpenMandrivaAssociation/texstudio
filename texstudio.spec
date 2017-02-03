@@ -10,6 +10,9 @@ URL:		http://texstudio.sourceforge.net/
 Group:		Publishing
 BuildRequires:	qt5-devel
 BuildRequires:	pkgconfig(poppler-qt5)
+BuildRequires:	pkgconfig(Qt5Svg)
+BuildRequires:	pkgconfig(Qt5Script)
+BuildRequires:	pkgconfig(Qt5UiTools)
 Requires:	desktop-file-utils 
 
 %description

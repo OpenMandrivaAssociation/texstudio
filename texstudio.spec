@@ -1,5 +1,3 @@
-%define debug_package %{nil}
-
 Name:		texstudio
 Summary:	Free cross-platform LaTeX editor
 License:	GPLv2+
@@ -30,7 +28,7 @@ tools.
 %make 
 
 %install
-make install INSTALL_ROOT=%buildroot
+make install INSTALL_ROOT=%buildroot STRIP=echo
 
 %files
 %{_datadir}/%{name}/*

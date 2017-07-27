@@ -3,7 +3,7 @@
 Name:		texstudio
 Summary:	Free cross-platform LaTeX editor
 License:	GPLv2+
-Version:	2.12.2
+Version:	2.12.6
 Release:	1
 Source0:	http://downloads.sourceforge.net/project/texstudio/%{name}/TeXstudio%20%{version}/%{name}-%{version}.tar.gz
 URL:		http://texstudio.sourceforge.net/
@@ -23,7 +23,7 @@ serves as a starting point from where you can easily run all necessary LaTeX
 tools.
 
 %prep
-%setup -qn texstudio%{version}
+%setup -qn texstudio-%{version}
 
 %build
 %qmake_qt5 PREFIX=%{_prefix} texstudio.pro 

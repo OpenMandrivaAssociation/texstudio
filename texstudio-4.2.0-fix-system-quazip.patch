@@ -1,0 +1,34 @@
+diff -up texstudio-4.2.0/src/spellerutility.cpp.omv~ texstudio-4.2.0/src/spellerutility.cpp
+--- texstudio-4.2.0/src/spellerutility.cpp.omv~	2022-01-09 14:50:03.585496099 +0100
++++ texstudio-4.2.0/src/spellerutility.cpp	2022-01-09 14:50:35.883555994 +0100
+@@ -11,7 +11,7 @@
+ 
+ #include "spellerutility.h"
+ #include "smallUsefulFunctions.h"
+-#include "JlCompress.h"
++#include <quazip/JlCompress.h>
+ 
+ int SpellerUtility::spellcheckErrorFormat = -1;
+ bool SpellerUtility::inlineSpellChecking = true;
+diff -up texstudio-4.2.0/src/templatemanager_p.cpp.omv~ texstudio-4.2.0/src/templatemanager_p.cpp
+--- texstudio-4.2.0/src/templatemanager_p.cpp.omv~	2022-01-09 14:51:29.785656447 +0100
++++ texstudio-4.2.0/src/templatemanager_p.cpp	2022-01-09 14:51:35.663667436 +0100
+@@ -1,5 +1,5 @@
+ #include "templatemanager_p.h"
+-#include "JlCompress.h"
++#include <quazip/JlCompress.h>
+ #include "smallUsefulFunctions.h"
+ #include <QJsonDocument>
+ 
+diff -up texstudio-4.2.0/texstudio.pro.omv~ texstudio-4.2.0/texstudio.pro
+--- texstudio-4.2.0/texstudio.pro.omv~	2022-01-09 14:50:52.966587766 +0100
++++ texstudio-4.2.0/texstudio.pro	2022-01-09 14:51:10.573620576 +0100
+@@ -383,7 +383,7 @@ isEmpty(USE_SYSTEM_QUAZIP) {
+ } else {
+         message(System quazip5)
+         isEmpty(QUAZIP_LIB): QUAZIP_LIB = -lquazip5
+-        isEmpty(QUAZIP_INCLUDE): QUAZIP_INCLUDE = $${PREFIX}/include/quazip5
++        isEmpty(QUAZIP_INCLUDE): QUAZIP_INCLUDE = /usr/include/QuaZip-Qt5-1.1
+         INCLUDEPATH += $${QUAZIP_INCLUDE}
+         LIBS += $${QUAZIP_LIB}
+ }

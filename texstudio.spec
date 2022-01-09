@@ -8,6 +8,7 @@ URL:		http://texstudio.sourceforge.net/
 Patch0:		texstudio-4.2.0-fix-system-quazip.patch
 Group:		Publishing
 BuildRequires:	qt5-devel
+BuildRequires:	pkgconfig(poppler-cpp)
 BuildRequires:	pkgconfig(poppler-qt5)
 BuildRequires:	pkgconfig(Qt5Svg)
 BuildRequires:	pkgconfig(Qt5Script)

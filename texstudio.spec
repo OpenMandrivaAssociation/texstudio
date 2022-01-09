@@ -10,6 +10,7 @@ Group:		Publishing
 BuildRequires:	qt5-devel
 BuildRequires:	pkgconfig(poppler-cpp)
 BuildRequires:	pkgconfig(poppler-qt5)
+BuildRequires:	pkgconfig(quazip1-qt5)
 BuildRequires:	pkgconfig(Qt5Svg)
 BuildRequires:	pkgconfig(Qt5Script)
 BuildRequires:	pkgconfig(Qt5UiTools)

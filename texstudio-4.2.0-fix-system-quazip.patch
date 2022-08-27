@@ -28,7 +28,7 @@ diff -up texstudio-4.2.0/texstudio.pro.omv~ texstudio-4.2.0/texstudio.pro
          message(System quazip5)
          isEmpty(QUAZIP_LIB): QUAZIP_LIB = -lquazip5
 -        isEmpty(QUAZIP_INCLUDE): QUAZIP_INCLUDE = $${PREFIX}/include/quazip5
-+        isEmpty(QUAZIP_INCLUDE): QUAZIP_INCLUDE = /usr/include/QuaZip-Qt5-1.1
++        isEmpty(QUAZIP_INCLUDE): QUAZIP_INCLUDE = /usr/include/QuaZip-Qt5-1.3
          INCLUDEPATH += $${QUAZIP_INCLUDE}
          LIBS += $${QUAZIP_LIB}
  }

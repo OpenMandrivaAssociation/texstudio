@@ -4,7 +4,7 @@ License:	GPLv2+
 Version:	4.8.3
 Release:	1
 Source0:	https://github.com/texstudio-org/texstudio/archive/refs/tags/%{version}.tar.gz
-URL:		http://texstudio.sourceforge.net/
+URL:		https://texstudio.sourceforge.net/
 Patch0:		texstudio-4.2.0-fix-system-quazip.patch
 Group:		Publishing
 BuildRequires:	qt5-devel

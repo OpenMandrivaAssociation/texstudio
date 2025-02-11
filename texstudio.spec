@@ -2,18 +2,26 @@ Name:		texstudio
 Summary:	Free cross-platform LaTeX editor
 License:	GPLv2+
 Version:	4.8.6
-Release:	1
+Release:	2
 Source0:	https://github.com/texstudio-org/texstudio/archive/refs/tags/%{version}.tar.gz
 URL:		https://texstudio.sourceforge.net/
 Patch0:		texstudio-4.2.0-fix-system-quazip.patch
 Group:		Publishing
-BuildRequires:	qt5-devel
+BuildRequires:	cmake
 BuildRequires:	pkgconfig(poppler-cpp)
-BuildRequires:	pkgconfig(poppler-qt5)
-BuildRequires:	pkgconfig(quazip1-qt5)
-BuildRequires:	pkgconfig(Qt5Svg)
-BuildRequires:	pkgconfig(Qt5Script)
-BuildRequires:	pkgconfig(Qt5UiTools)
+BuildRequires:	pkgconfig(poppler-qt6)
+BuildRequires:	pkgconfig(quazip1-qt6)
+BuildRequires:	pkgconfig(Qt6Core)
+BuildRequires:  pkgconfig(Qt6Network)
+BuildRequires:  pkgconfig(Qt6Xml)
+BuildRequires:  pkgconfig(Qt6Concurrent)
+BuildRequires:	pkgconfig(Qt6Widgets)
+BuildRequires:	pkgconfig(Qt6Svg)
+BuildRequires:	pkgconfig(Qt6UiTools)
+BuildRequires:  pkgconfig(Qt6PrintSupport)
+BuildRequires:  pkgconfig(Qt6Qml)
+BuildRequires:  pkgconfig(Qt6Svg)
+BuildRequires:  pkgconfig(Qt6Linguist)
 Requires:	desktop-file-utils 
 
 %description
@@ -25,13 +33,17 @@ tools.
 
 %prep
 %autosetup -p1
-
+rm -rf {hunspell,qtsingleapplication,quazip}
+# force qt6
+sed -i 's/Qt5//' CMakeLists.txt
+ 
 %build
-%qmake_qt5 PREFIX=%{_prefix} USE_SYSTEM_QUAZIP=1 texstudio.pro 
+%cmake
+ 
 %make_build
 
 %install
-make install INSTALL_ROOT=%buildroot STRIP=echo
+%make_install -C build
 
 %files
 %{_datadir}/%{name}/*

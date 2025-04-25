@@ -1,8 +1,8 @@
 Name:		texstudio
 Summary:	Free cross-platform LaTeX editor
 License:	GPLv2+
-Version:	4.8.6
-Release:	2
+Version:	4.8.7
+Release:	1
 Source0:	https://github.com/texstudio-org/texstudio/archive/refs/tags/%{version}.tar.gz
 URL:		https://texstudio.sourceforge.net/
 Patch0:		texstudio-4.2.0-fix-system-quazip.patch
@@ -53,3 +53,4 @@ sed -i 's/Qt5//' CMakeLists.txt
 %{_datadir}/applications/texstudio.desktop
 %{_datadir}/icons/hicolor/scalable/apps/texstudio.svg
 %{_bindir}/texstudio
+%doc %{_docdir}/texstudio

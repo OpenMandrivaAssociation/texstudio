@@ -1,6 +1,6 @@
-diff -up texstudio-4.4.0/src/spellerutility.cpp.1~ texstudio-4.4.0/src/spellerutility.cpp
---- texstudio-4.4.0/src/spellerutility.cpp.1~	2022-11-14 18:37:09.000000000 +0100
-+++ texstudio-4.4.0/src/spellerutility.cpp	2022-11-19 16:36:48.462547074 +0100
+diff -up texstudio-4.8.9/src/spellerutility.cpp.1~ texstudio-4.8.9/src/spellerutility.cpp
+--- texstudio-4.8.9/src/spellerutility.cpp.1~	2025-09-12 17:02:53.000000000 +0200
++++ texstudio-4.8.9/src/spellerutility.cpp	2025-09-13 15:50:23.601596487 +0200
 @@ -11,7 +11,7 @@
  
  #include "spellerutility.h"
@@ -10,9 +10,9 @@ diff -up texstudio-4.4.0/src/spellerutility.cpp.1~ texstudio-4.4.0/src/spellerut
  
  int SpellerUtility::spellcheckErrorFormat = -1;
  bool SpellerUtility::inlineSpellChecking = true;
-diff -up texstudio-4.4.0/src/templatemanager_p.cpp.1~ texstudio-4.4.0/src/templatemanager_p.cpp
---- texstudio-4.4.0/src/templatemanager_p.cpp.1~	2022-11-14 18:37:09.000000000 +0100
-+++ texstudio-4.4.0/src/templatemanager_p.cpp	2022-11-19 16:36:48.463547084 +0100
+diff -up texstudio-4.8.9/src/templatemanager_p.cpp.1~ texstudio-4.8.9/src/templatemanager_p.cpp
+--- texstudio-4.8.9/src/templatemanager_p.cpp.1~	2025-09-12 17:02:53.000000000 +0200
++++ texstudio-4.8.9/src/templatemanager_p.cpp	2025-09-13 15:50:23.601818717 +0200
 @@ -1,5 +1,5 @@
  #include "templatemanager_p.h"
 -#include "JlCompress.h"
@@ -20,15 +20,4 @@ diff -up texstudio-4.4.0/src/templatemanager_p.cpp.1~ texstudio-4.4.0/src/templa
  #include "smallUsefulFunctions.h"
  #include <QJsonDocument>
  
-diff -up texstudio-4.4.0/texstudio.pro.1~ texstudio-4.4.0/texstudio.pro
---- texstudio-4.4.0/texstudio.pro.1~	2022-11-19 16:36:48.463547084 +0100
-+++ texstudio-4.4.0/texstudio.pro	2022-11-19 16:38:28.800562382 +0100
-@@ -372,7 +372,7 @@ isEmpty(USE_SYSTEM_QUAZIP) {
-     !versionGreaterOrEqual($$QT_VERSION, "6.0.0") {
-             message(System quazip5)
-             isEmpty(QUAZIP_LIB): QUAZIP_LIB = -lquazip5
--            isEmpty(QUAZIP_INCLUDE): QUAZIP_INCLUDE = $${PREFIX}/include/quazip5
-+            isEmpty(QUAZIP_INCLUDE): QUAZIP_INCLUDE = /usr/include/QuaZip-Qt5-1.4
-             INCLUDEPATH += $${QUAZIP_INCLUDE}
-             LIBS += $${QUAZIP_LIB}
-     }
+diff -up texstudio-4.8.9/texstudio.pro.1~ texstudio-4.8.9/texstudio.pro

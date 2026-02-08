@@ -7,7 +7,7 @@ Source0:	https://github.com/texstudio-org/texstudio/archive/refs/tags/%{version}
 URL:		https://texstudio.sourceforge.net/
 Patch0:		texstudio-4.2.0-fix-system-quazip.patch
 Group:		Publishing
-BuildRequires:	cmake
+BuildSystem:	cmake
 BuildRequires:	pkgconfig(poppler-cpp)
 BuildRequires:	pkgconfig(poppler-qt6)
 BuildRequires:	pkgconfig(quazip1-qt6)
@@ -33,20 +33,11 @@ interactive spell checking, code folding and syntax highlighting. Also it
 serves as a starting point from where you can easily run all necessary LaTeX
 tools.
 
-%prep
-%autosetup -p1
+%prep -a
 rm -rf {hunspell,qtsingleapplication,quazip}
 # force qt6
 sed -i 's/Qt5//' CMakeLists.txt
  
-%build
-%cmake
- 
-%make_build
-
-%install
-%make_install -C build
-
 %files
 %{_datadir}/%{name}/*
 %{_datadir}/metainfo/texstudio.metainfo.xml
